@@ -1,0 +1,17 @@
+$hand-color: black;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin hand-length($hand) {
+  content: '';
+  width: .33em;
+  height: $hand;
+  background-color: $hand-color;
+  display: block;
+  border-radius: .16em;
+  box-shadow: 0 0 .32em rgba(0,0,0,.2);
+}
