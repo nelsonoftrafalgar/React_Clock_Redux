@@ -1,4 +1,4 @@
 export const getTime = (time) => ({
-    type: 'GET_TIME',
+    type: "GET_TIME",
     time
 })

@@ -15,3 +15,9 @@ $hand-color: black;
   border-radius: .16em;
   box-shadow: 0 0 .32em rgba(0,0,0,.2);
 }
+
+@mixin animation {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

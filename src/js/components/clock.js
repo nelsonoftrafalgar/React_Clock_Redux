@@ -1,22 +1,22 @@
-import React from 'react';
-import '../../../src/sass/style.css';
-import PropTypes from 'prop-types';
+import React from "react"
+import "../../../src/sass/style.css"
 
-const Clock = (props) => {
+class Clock extends React.PureComponent {
+  render() {
+    const randomDuration = (Math.random() * 6) + 1  
+    const minRotateStyle = {animationDuration: `${randomDuration}s`}
+    const hrRotateStyle = {animationDuration: `${randomDuration * 12}s`}
 
-    const rotate = {transform: `rotate(${props.rotate}deg)`};
-
-    return <div className='clock-container'>
-      <div className='clock'>
-        <div style={rotate} className='hour'></div>
-        <div style={rotate} className='minute'></div>
-        <div className='center'></div>
+    return (
+      <div className="clock-container">
+        <div className="clock">
+          <div style={hrRotateStyle} className="hour"></div>
+          <div style={minRotateStyle} className="minute"></div>
+          <div className="center"></div>
+        </div>
       </div>
-    </div>
+    )
+  }
 }
 
-Clock.propTypes = {
-  rotate: PropTypes.number.isRequired,
-}
-
-export default Clock;
+export default Clock

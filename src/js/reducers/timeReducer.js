@@ -1,11 +1,6 @@
-const time = new Date().toLocaleTimeString();
+import {initialState} from "./../store"
 
-const timeReducer = (state = {
-  hrFirst: time.charAt(0),
-  hrSecond: time.charAt(1),
-  minFirst: time.charAt(3),
-  minSecond: time.charAt(4),
-}, action) => {
+const timeReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_TIME':
         state = {
@@ -14,9 +9,9 @@ const timeReducer = (state = {
           hrSecond: action.time.charAt(1),
           minFirst: action.time.charAt(3),
           minSecond: action.time.charAt(4),
-        };  
+        }   
     default:
-      return state;
+      return state
   }
 }
-export default timeReducer;
+export default timeReducer
